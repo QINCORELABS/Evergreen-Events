@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+:root {
+    --primary-color: #1C6000;
+    --heading-color : #E9E9E9;
+}
+
+
+/*custom fonts importing*/
+/*KOHINOOR TELUGU*/
+@font-face {
+    font-family: 'kohinoor';
+    src: url('/public/fonts/FontsFree-Net-KohinoorTelugu-Medium.ttf')format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Italiana*/
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+.italiana-regular {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

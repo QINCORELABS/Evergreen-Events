@@ -1,0 +1,18 @@
+.about-us-container{
+  height: 90vh;
+  width: 100%;
+  background-color: black;
+  color: #E9E9E9;
+  font-family: "Italiana", sans-serif;
+}
+
+.about-us-first-contents{
+  height: 30vh;
+  width: 40%;
+  background-color: red;
+}
+
+.about-us-first-section{
+  display: flex;
+  
+}

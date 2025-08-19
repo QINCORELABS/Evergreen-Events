@@ -1,0 +1,18 @@
+.page-header-container {
+  height: 300px;
+  width: 100%;
+  background: url("/common/headerimg.jpg") no-repeat center center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-header-title {
+  font-size: 43px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: "Italiana", sans-serif;
+  text-align: center;
+}
