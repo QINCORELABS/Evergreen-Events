@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "../header/Header.css"
-import evergreenlogo from "../../../public/logos/evergreen-logo.webp"
+import evergreenlogo from "../../../public/logos/evergreen-logo.png"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)

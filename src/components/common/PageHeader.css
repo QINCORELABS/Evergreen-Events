@@ -3,16 +3,24 @@
   width: 100%;
   background: url("/common/headerimg.jpg") no-repeat center center;
   background-size: cover;
-
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.page-header-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
 }
 
 .page-header-title {
   font-size: 43px;
   text-transform: uppercase;
   color: #ffffff;
-  font-family: "Italiana", sans-serif;
+  font-family: "Italiana", serif;
   text-align: center;
+  z-index: 1;
 }

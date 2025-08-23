@@ -5,6 +5,10 @@ import Layout from "./pages/Layout";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import ServicePage from "./pages/ServicePage";
+import BookingPage from "./pages/BookingPage";
+import TestimonialsPage from "./pages/TestimonialsPage";
+import ContactPage from "./pages/ContactPage";
+import ServiceDetailsPage from "./pages/ServiceDetailsPage";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -21,7 +25,23 @@ const App = () => {
         },
         {
           path: "services",
-          element: <ServicePage/>
+          element: <ServicePage />,
+        },
+        {
+          path: "booking",
+          element: <BookingPage />,
+        },
+        {
+          path : "testimonials",
+          element : <TestimonialsPage/>
+        },
+        {
+          path : "contact",
+          element : <ContactPage/>
+        },
+        {
+          path : "service-details",
+          element : <ServiceDetailsPage/>
         }
       ],
     },

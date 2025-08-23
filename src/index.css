@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -20,7 +21,7 @@
 }
 
 /*Italiana*/
-@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
 .italiana-regular {
   font-family: "Italiana", sans-serif;
   font-weight: 400;
