@@ -74,15 +74,17 @@ nav {
 
 /* Mobile styles */
 @media (max-width: 768px) {
+  /* Hide both the navigation menu and the Book Now button by default */
   .nav-menus ul {
-    display: none; /* hide desktop menu */
-  }
-  .hamburger {
-    display: block; /* show hamburger */
+    display: none;
   }
   .nav-contact {
-    display: none; /* hide Book Now on mobile if you want */
+    display: none; /* Hide Book Now button on mobile */
   }
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+  /* Show navigation menu when hamburger is toggled */
   .nav-menus.open ul {
     display: flex;
     flex-direction: column;

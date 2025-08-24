@@ -1,0 +1,112 @@
+.service-details-container {
+    height: 100vh;
+    background-color: black;
+    display: flex;
+}
+
+.service-categories-sidebar {
+    height: 100vh;
+    width: 20%;
+    background-color: rgb(0, 0, 0);
+    padding: 40px 20px;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.service-categories-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.service-categories-sidebar li {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+}
+
+.service-categories-sidebar li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.service-categories-sidebar li.active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.service-name {
+    display: inline-block;
+}
+
+.arrow {
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.arrow.open {
+    transform: rotate(90deg);
+}
+
+.services-details {
+    height: 100vh;
+    width: 80%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.service-content {
+    text-align: center;
+}
+
+.service-content img {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.service-content p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Mobile Accordion Styles */
+@media (max-width: 768px) {
+    .service-details-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .service-categories-sidebar {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .service-categories-sidebar ul {
+        gap: 0;
+    }
+
+    .service-categories-sidebar li {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .service-content-mobile {
+        display: block;
+        padding: 10px 15px;
+        background-color: rgba(255, 255, 255, 0.05);
+        margin-top: 10px;
+    }
+
+    .services-details {
+        display: none;
+    }
+}

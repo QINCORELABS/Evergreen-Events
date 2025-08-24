@@ -1,0 +1,215 @@
+/* Wedding Gallery Styles */
+.wedding-container {
+  
+  background-color: #000;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Header Styles */
+.header {
+  background: linear-gradient(135deg, #2c1810, #1a0f0a);
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 2px solid #333;
+}
+
+.header-title {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #111;
+  padding: 15px 30px;
+  border-bottom: 1px solid #333;
+}
+
+.nav-button {
+  margin: 0 15px;
+  padding: 12px 25px;
+  color: #fff;
+  background-color: #4a5d23;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-button:hover {
+  background-color: #5a7a2a;
+}
+
+.nav-button.active {
+  background-color: #6b8e23;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+/* Showcase Buttons */
+.showcase-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #111;
+  padding: 15px 30px;
+  border-bottom: 2px solid #333;
+}
+
+.showcase-button {
+  margin: 0 15px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #555;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.showcase-button:hover {
+  background-color: #666;
+}
+
+.showcase-button.active {
+  background-color: #777;
+  transform: translateY(-1px);
+}
+
+/* Gallery Styles */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background-color: #000;
+  padding: 30px;
+  min-height: 70vh;
+}
+
+.gallery-item {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid #333;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1);
+}
+
+/* Play button and video text for video showcase */
+.play-button {
+  font-size: 48px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .play-button {
+  transform: scale(1.2);
+}
+
+.video-text {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* Image Fallback */
+.image-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+  }
+  
+  .nav-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+  
+  .header-title {
+    font-size: 24px;
+  }
+  
+  .nav-buttons, .showcase-buttons {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .nav-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+  
+  .showcase-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+  
+  .nav-button, .showcase-button {
+    margin: 0;
+    width: auto;
+  }
+  
+  .header-title {
+    font-size: 20px;
+  }
+  
+  .gallery-item {
+    height: 200px;
+  }
+}

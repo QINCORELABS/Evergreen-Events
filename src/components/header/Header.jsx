@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import "../header/Header.css"
-import evergreenlogo from "../../../public/logos/evergreen-logo.png"
+import React, { useState } from 'react';
+import "../header/Header.css";
+import evergreenlogo from "../../../public/logos/evergreen-logo.png";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav>
@@ -27,7 +27,7 @@ const Header = () => {
         <button>Book now</button>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -9,6 +9,7 @@ import BookingPage from "./pages/BookingPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
 import ContactPage from "./pages/ContactPage";
 import ServiceDetailsPage from "./pages/ServiceDetailsPage";
+import WeddingPage from "./pages/WeddingPage";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -42,6 +43,10 @@ const App = () => {
         {
           path : "service-details",
           element : <ServiceDetailsPage/>
+        },
+        {
+          path : "weddings",
+          element : <WeddingPage/>
         }
       ],
     },
