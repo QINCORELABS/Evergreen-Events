@@ -1,111 +1,47 @@
-import React, { useState } from "react";
-import "../contact/Contact.css"
+import React from "react";
+import "../contact/Contact.css";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    mobile: '',
-    email: '',
-    message: ''
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here
-  };
-
   return (
-    <div className="contact-section-container">
-      <div className="contact-section-tittle">
-        <h2>FEEL FREE TO GET IN TOUCH</h2>
-      </div>
+    <div className="contact-page">
+      <div className="contact-title italiana-regular"><h2 className="italiana-regular">FEEL FREE TO GET IN TOUCH</h2></div>
+     
 
-      <div className="contact-details">
-        <div className="contact-detail-item location-details">
-          <button className="detail-button">LOCATION</button>
-          <p>
-            Evergreen events, 6th Floor,<br />
-            Bishop Jerome Nagar,<br />
-            Chinnakkada Kollam, Kerala
-          </p>
+      {/* Contact Info Section */}
+      <div className="contact-info">
+        <div className="info-box">
+          <button className="info-btn">LOCATION</button>
+          <p>Evergreen events, 6th Floor,</p>
+          <p>Bishop Jerome Nagar,</p>
+          <p>Chinnakkada Kollam , Kerala</p>
         </div>
 
-        <div className="contact-detail-item mobile-details">
-          <button className="detail-button">MOBILE</button>
-          <p>
-            +91 99 47 37 66 67<br />
-            +91 99 47 25 76 82
-          </p>
+        <div className="info-box">
+          <button className="info-btn">MOBILE</button>
+          <p>+91 99 47 37 66 67</p>
+          <p>+91 99 47 25 76 82</p>
         </div>
 
-        <div className="contact-detail-item email-details">
-          <button className="detail-button">EMAIL</button>
-          <p>evergreenevents6667@gmail.com</p>
+        <div className="info-box">
+          <button className="info-btn">EMAIL</button>
+          <p>evergreenevents666@gmail.com</p>
         </div>
       </div>
 
       <hr className="divider" />
 
-      <div className="contact-form-section">
-        <form onSubmit={handleSubmit} className="contact-form">
-          <div className="form-row">
-            <div className="form-group">
-              <input
-                type="text"
-                name="name"
-                placeholder="What's your Name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="tel"
-                name="mobile"
-                placeholder="Your mobile Number"
-                value={formData.mobile}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-          </div>
+      {/* Contact Form */}
+      <form className="contact-form">
+        <div className="form-row">
+          <input type="text" placeholder="Whats your Name" required />
+          <input type="tel" placeholder="Your mobile Number" required />
+          <input type="email" placeholder="Your Email" required />
+        </div>
 
-          <div className="form-group message-group">
-            <textarea
-              name="message"
-              placeholder="Your message"
-              rows="6"
-              value={formData.message}
-              onChange={handleInputChange}
-              required
-            ></textarea>
-          </div>
+        <textarea placeholder="Your message" rows="5" required></textarea>
 
-          <button type="submit" className="submit-button">
-            Submit
-          </button>
-        </form>
-      </div>
+        <button type="submit" className="submit-btn">Submit</button>
+      </form>
     </div>
   );
 };

@@ -1,0 +1,98 @@
+.booking-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 50px;
+  background: #000;
+  color: #fff;
+  height: 60vh;
+}
+
+/* Left image slider */
+.image-slider {
+  display: flex;
+  gap: 15px;
+  flex: 1;
+}
+
+.card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  flex: 0.6;
+}
+
+.card.active {
+  flex: 2;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right content */
+.booking-content {
+  flex: 1;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #bbb;
+}
+
+.booking-content h2 {
+  font-size: 28px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  font-family: "Georgia", serif;
+}
+
+.btn {
+  background: #137000;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #0f5800;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .booking-wrapper {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .image-slider {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .card {
+    flex: 1;
+  }
+
+  .booking-content h2 {
+    font-size: 22px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

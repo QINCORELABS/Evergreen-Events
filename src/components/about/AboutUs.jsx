@@ -8,6 +8,7 @@ import registrationcertificate from "../../assets/about/registration-certificate
 const AboutUs = () => {
   return (
     <div className="about-us-container">
+      {/* First Section */}
       <div className="about-us-first-section">
         <div className="about-us-first-contents">
           <h2 className="italiana-regular">
@@ -33,7 +34,8 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="about-us-first-section">
+      {/* Second Section */}
+      <div className="about-us-first-section reverse">
         <div className="about-us-first-contents about-us-second-contents">
           <p>
             Evergreen Event Management team, Kollam may take care of almost all
@@ -51,19 +53,26 @@ const AboutUs = () => {
         </div>
         <div className="about-us-first-rightside">
           <div className="image-container">
-            <img src={aboutussecond} alt="Event Setup" className="secondaboutimg" />
+            <img
+              src={aboutussecond}
+              alt="Event Setup"
+              className="secondaboutimg"
+            />
             <div className="dotted-overlay"></div>
           </div>
         </div>
       </div>
 
+      {/* Certificate Section */}
       <div className="company-registration-certificate">
         <div className="company-logo">
           <img src={evergreenlogo} alt="Evergreen Logo" />
         </div>
         <div className="registration-certificate">
-          <img src={registrationcertificate} alt="Registration Certificate" />
-          <div className="white-circles"></div>
+          <img
+            src={registrationcertificate}
+            alt="Registration Certificate"
+          />
         </div>
       </div>
     </div>

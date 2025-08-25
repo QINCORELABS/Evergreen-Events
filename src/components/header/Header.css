@@ -1,29 +1,26 @@
-/* Main nav */
 nav {
   height: 60px;
   width: 90%;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
   box-sizing: border-box;
-  position: absolute; /* overlay on hero image */
+  position: absolute;
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
 }
 
-/* Logo */
 .nav-left-section img {
   height: 54px;
   width: 164px;
 }
 
-/* Desktop menu */
 .nav-menus ul {
   list-style: none;
   display: flex;
@@ -47,7 +44,6 @@ nav {
   font-weight: bold;
 }
 
-/* Book button */
 .nav-contact button {
   background-color: #007a33;
   color: #fff;
@@ -64,7 +60,6 @@ nav {
   background-color: #005a26;
 }
 
-/* Hamburger hidden by default (desktop) */
 .hamburger {
   display: none;
   font-size: 28px;
@@ -72,32 +67,39 @@ nav {
   color: #000;
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
-  /* Hide both the navigation menu and the Book Now button by default */
   .nav-menus ul {
     display: none;
   }
   .nav-contact {
-    display: none; /* Hide Book Now button on mobile */
+    display: none;
   }
   .hamburger {
-    display: block; /* Show hamburger icon */
+    display: block;
   }
-  /* Show navigation menu when hamburger is toggled */
+
   .nav-menus.open ul {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 100px;
+    top: 60px;
     left: 0;
     width: 100%;
-    background-color: #1a1a1a;
     padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
   }
   .nav-menus.open ul li {
-    color: #fff;
+    color: #000;
     margin: 10px 0;
+    font-size: 18px;
+  }
+  .hamburger {
+    position: absolute;
+    right: 20px;
+  }
+
+  nav {
+    background-color: transparent;
   }
 }

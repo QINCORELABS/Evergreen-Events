@@ -1,5 +1,5 @@
 .page-header-container {
-  height: 300px;
+  height: 250px;
   width: 100%;
   background: url("/common/headerimg.jpg") no-repeat center center;
   background-size: cover;
@@ -24,4 +24,25 @@
   font-family: "Italiana", serif;
   text-align: center;
   z-index: 1;
+}
+
+/* 🔹 Responsive adjustments */
+@media (max-width: 768px) {
+  .page-header-container {
+    height: 50px; /* reduce height for tablets & small devices */
+  }
+
+  .page-header-title {
+    font-size: 32px; /* slightly smaller font */
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header-container {
+    height: 160px; /* smaller height for mobile */
+  }
+
+  .page-header-title {
+    font-size: 26px; /* smaller font for mobiles */
+  }
 }
