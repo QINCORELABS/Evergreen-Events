@@ -1,0 +1,32 @@
+.read-more-container {
+  display: flex;
+  justify-content: flex-start; /* left aligned */
+  margin-top: 20px;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2e7d32; /* green like your screenshot */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #1b5e20;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover .arrow-icon {
+  transform: translateX(5px);
+}

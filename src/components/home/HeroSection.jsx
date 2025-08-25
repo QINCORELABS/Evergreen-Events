@@ -1,13 +1,29 @@
 import React, { useState } from 'react';
-import "../home/HeroSection.css";
+import "../home/HeroSection.css"
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
   const slides = [
-    { image: './carousels/firstcarousel.jpeg', title: 'Wedding Event 1', description: 'Kerala Royal Events & Wedding Planner' },
-    { image: './carousels/secondcarousel.jpeg', title: 'Wedding Event 2', description: 'Luxury Wedding Planning' },
-    { image: './carousels/thirdcarousel.png', title: 'Wedding Event 3', description: 'Elite Event Services' },
-    { image: './carousels/fourthcarousel.png', title: 'Wedding Event 3', description: 'Elite Event Services' },
+    { 
+      image: "./carousels/firstcarousel.jpeg",  
+      description: 'KERALA | ROYAL EVENTS & WEDDING PLANNER' 
+    },
+    { 
+      image: "/carousels/secondcarousel.jpeg", 
+      title: 'Wedding Event', 
+      description: 'LUXURY WEDDING PLANNING' 
+    },
+    { 
+      image: '/carousels/thirdcarousel.png', 
+      title: 'Wedding Event', 
+      description: 'ELITE EVENT SERVICES' 
+    },
+    { 
+      image: '/carousels/fourthcarousel.png', 
+      title: 'Wedding Event', 
+      description: 'PREMIUM CELEBRATIONS' 
+    },
   ];
 
   const nextSlide = () => {
@@ -22,29 +38,66 @@ const HeroSection = () => {
 
   return (
     <div className="hero-section">
-      <div className="hero-image">
-        <img src={image} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      {/* Background Image with Overlay */}
+      <div className="hero-image-container">
+        <img src={image} alt={title} className="hero-image" />
+        <div className="hero-overlay"></div>
       </div>
-      <div className="hero-content">
-        <h1 style={{ color: '#ffffff' }}>{title}</h1>
-        <p style={{ color: '#ffffff' }}>{description}</p>
-        <div className="progress-bar">
-          <div className="progress" style={{ backgroundColor: '#00ff00', width: `${(100 / slides.length) * (currentSlide + 1)}%` }}></div>
-        </div>
-        <div className="event-nav">
-          <span style={{ color: '#ffffff' }}>{String(currentSlide + 1).padStart(2, '0')}</span>
-          <div className="nav-arrows">
-            <span style={{ color: '#ffffff' }} onClick={prevSlide}>←</span>
-            <span style={{ color: '#ffffff' }} onClick={nextSlide}>→</span>
+
+      {/* Left Bottom - Title & Subtitle */}
+      <div className="hero-left">
+        <h1 className="hero-title">{title}</h1>
+        <p className="hero-subtitle">{description}</p>
+        <div className="progress-section">
+          <span className="slide-number">
+            {String(currentSlide + 1).padStart(2, '0')}
+          </span>
+          <div className="progress-bar">
+            <div 
+              className="progress"
+              style={{
+                width: `${(100 / slides.length) * (currentSlide + 1)}%`
+              }}
+            ></div>
           </div>
-          <span style={{ color: '#ffffff' }}>{String(slides.length).padStart(2, '0')} - Events</span>
         </div>
-        <div className="thumbnail">
-          <img src={slides[(currentSlide + 1) % slides.length].image} alt={slides[(currentSlide + 1) % slides.length].title} style={{ width: '150px', height: '100px', objectFit: 'cover', border: '2px solid #ffffff' }} />
+      </div>
+
+      {/* Bottom Center - Navigation */}
+      <div className="hero-nav">
+        <div className="nav-dots">
+          <div 
+            className={`dot-button left-dot ${currentSlide > 0 ? 'active-dot' : ''}`}
+            onClick={prevSlide}
+          >
+            <span className="nav-arrow">←</span>
+          </div>
+          <div 
+            className={`dot-button right-dot ${currentSlide < slides.length - 1 ? 'active-dot' : ''}`}
+            onClick={nextSlide}
+          >
+            <span className="nav-arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Right - Thumbnail & Info */}
+      <div className="hero-right">
+        <div className="thumb-container">
+          <img 
+            src={slides[(currentSlide + 1) % slides.length].image} 
+            alt="Next event" 
+            className="hero-thumbnail"
+          />
+        </div>
+        <div className="event-info">
+          <span className="event-number">
+            {String(currentSlide + 1).padStart(2, '0')} - Events
+          </span>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default HeroSection;

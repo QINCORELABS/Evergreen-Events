@@ -52,7 +52,7 @@
   font-size: 28px;
   line-height: 1.4;
   margin-bottom: 20px;
-  font-family: "Georgia", serif;
+  
 }
 
 .btn {
@@ -64,6 +64,7 @@
   font-size: 15px;
   cursor: pointer;
   transition: background 0.3s;
+   font-family: "kohinoor";
 }
 
 .btn:hover {
