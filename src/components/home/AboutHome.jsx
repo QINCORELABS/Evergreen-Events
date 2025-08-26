@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../home/AboutHome.css";
 import { FiArrowRight } from "react-icons/fi"; // Right Arrow Icon
 import aboutusweddingimg from "../../assets/about/about-us-img.webp";
@@ -64,9 +65,9 @@ const AboutHome = () => {
 
       {/* Read More Button (One for the whole section) */}
       <div className="read-more-container">
-        <button className="read-more-btn">
-          Read More <FiArrowRight className="arrow-icon" />
-        </button>
+        <Link to="/about" className="read-more-btn">
+      Read More <FiArrowRight className="arrow-icon" />
+    </Link>
       </div>
     </div>
   );

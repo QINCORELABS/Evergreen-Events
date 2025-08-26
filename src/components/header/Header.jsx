@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import "../header/Header.css";
-import evergreenlogo from "../../../public/logos/evergreen-logo.png";
+import evergreenlogo from "../../../public/logos/evergreen-logo.webp";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

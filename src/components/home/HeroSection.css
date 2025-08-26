@@ -206,41 +206,56 @@
 }
 
 @media (max-width: 480px) {
+  .hero-section {
+    height: 60vh; /* Reduced height for phone view */
+  }
+  
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .hero-subtitle {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   
   .hero-left {
-    bottom: 100px;
-    left: 20px;
+    bottom: 80px;
+    left: 15px;
+    width: 80%;
   }
   
   .hero-right {
-    bottom: 20px;
-    right: 20px;
+    bottom: 15px;
+    right: 15px;
+    flex-direction: column;
+    align-items: flex-end;
   }
   
   .hero-thumbnail {
+    width: 100px;
+    height: 60px;
+  }
+  
+  .progress-bar {
     width: 120px;
-    height: 70px;
   }
   
   .progress-section {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
   }
   
   .dot-button {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
   }
   
   .nav-arrow {
-    font-size: 14px;
+    font-size: 12px;
+  }
+  
+  .hero-nav {
+    bottom: 20px;
   }
 }

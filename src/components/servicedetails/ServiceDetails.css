@@ -1,112 +1,249 @@
+/* Container styles */
 .service-details-container {
-    height: 100vh;
-    background-color: black;
-    display: flex;
+  display: flex;
+  min-height: calc(100vh - 200px);
+  background-color: #000;
+  color: #fff;
 }
 
-.service-categories-sidebar {
-    height: 100vh;
-    width: 20%;
-    background-color: rgb(0, 0, 0);
-    padding: 40px 20px;
-    color: white;
-    font-weight: 400;
-    font-size: 18px;
+/* Left sidebar with service list */
+.services-list {
+  width: 300px;
+  background-color: #111;
+  padding: 20px 0;
+  border-right: 1px solid #333;
 }
 
-.service-categories-sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.service-item {
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  font-family: 'Italiana', serif;
 }
 
-.service-categories-sidebar li {
-    padding: 10px 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    position: relative;
+.service-item:hover {
+  background-color: #222;
+  border-left: 3px solid #fff;
 }
 
-.service-categories-sidebar li:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+.service-item.active {
+  background-color: #333;
+  border-left: 3px solid #fff;
+  font-weight: 400;
 }
 
-.service-categories-sidebar li.active {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.service-name {
-    display: inline-block;
-}
-
-.arrow {
-    position: absolute;
-    right: 20px;
-    transition: transform 0.3s ease;
-}
-
-.arrow.open {
-    transform: rotate(90deg);
-}
-
-.services-details {
-    height: 100vh;
-    width: 80%;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+/* Right content area */
+.service-list-details {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
 }
 
 .service-content {
-    text-align: center;
+  max-width: 1200px;
 }
 
-.service-content img {
-    border-radius: 10px;
-    margin-bottom: 10px;
+.service-title {
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: 'Italiana', serif;
 }
 
-.service-content p {
-    max-width: 600px;
-    margin: 0 auto;
+.service-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 40px;
+  text-align: justify;
+  font-family: "kohinoor";
+}
+
+/* Grid layout for service items */
+.service-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.service-item-card {
+  height: 250px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: none;
+}
+
+.service-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.service-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.service-item-name {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 /* Mobile Accordion Styles */
+.mobile-accordion-container {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #333;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: #222;
+}
+
+.accordion-title {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: 'Italiana', serif;
+}
+
+.accordion-arrow {
+  transition: transform 0.3s ease;
+  color: #fff;
+}
+
+.accordion-arrow.open {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #111;
+}
+
+.accordion-content.open {
+  max-height: 2000px;
+}
+
+.accordion-body {
+  padding: 20px;
+}
+
+.mobile-service-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.mobile-service-items {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 20px;
+}
+
+.mobile-service-item {
+  width: 100%;
+  height: 220px; /* increased size */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: none;
+}
+
+.mobile-service-item-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover; /* fill properly */
+}
+
+.mobile-service-item:active {
+  transform: scale(0.98);
+}
+
+.mobile-item-name {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  padding: 8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-    .service-details-container {
-        flex-direction: column;
-        height: auto;
-    }
+  .service-details-container {
+    display: none;
+  }
+}
 
-    .service-categories-sidebar {
-        width: 100%;
-        height: auto;
-        padding: 20px;
-    }
+@media (min-width: 769px) {
+  .mobile-accordion-container {
+    display: none;
+  }
+}
 
-    .service-categories-sidebar ul {
-        gap: 0;
-    }
-
-    .service-categories-sidebar li {
-        padding: 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .service-content-mobile {
-        display: block;
-        padding: 10px 15px;
-        background-color: rgba(255, 255, 255, 0.05);
-        margin-top: 10px;
-    }
-
-    .services-details {
-        display: none;
-    }
+@media (max-width: 480px) {
+  .mobile-service-item {
+    height: 200px; /* slightly smaller for tiny screens */
+  }
+  
+  .mobile-item-name {
+    font-size: 13px;
+  }
+  
+  .accordion-title {
+    font-size: 15px;
+  }
+  
+  .mobile-service-description {
+    font-size: 13px;
+    font-family: "kohinoor";
+  }
 }
