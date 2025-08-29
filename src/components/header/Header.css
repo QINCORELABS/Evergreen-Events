@@ -14,6 +14,7 @@ nav {
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
 .nav-left-section img {
@@ -44,7 +45,8 @@ nav {
   font-weight: bold;
 }
 
-.nav-contact button {
+.nav-contact button,
+.mobile-cta button {
   background-color: #007a33;
   color: #fff;
   border: none;
@@ -56,7 +58,8 @@ nav {
   transition: 0.3s;
 }
 
-.nav-contact button:hover {
+.nav-contact button:hover,
+.mobile-cta button:hover {
   background-color: #005a26;
 }
 
@@ -67,17 +70,30 @@ nav {
   color: #000;
 }
 
+/* ---------- MOBILE STYLES ---------- */
+.mobile-cta {
+  display: none; /* hidden on desktop */
+}
+
 @media (max-width: 768px) {
   .nav-menus ul {
     display: none;
   }
+
+  /* Hide desktop button */
   .nav-contact {
     display: none;
   }
+
+  /* Show hamburger */
   .hamburger {
     display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
   }
 
+  /* Mobile dropdown menu */
   .nav-menus.open ul {
     display: flex;
     flex-direction: column;
@@ -86,20 +102,45 @@ nav {
     left: 0;
     width: 100%;
     padding: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  .nav-menus.open ul li {
-    color: #000;
-    margin: 10px 0;
-    font-size: 18px;
-  }
-  .hamburger {
-    position: absolute;
-    right: 20px;
+    background-color: #000000; /* black background */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 8px 8px;
+    z-index: 999;
+    animation: slideDown 0.3s ease;
   }
 
-  nav {
-    background-color: transparent;
+  .nav-menus.open ul li {
+    margin: 12px 0;
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff; /* white text */
   }
+
+  .nav-menus.open ul li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  /* CTA inside mobile menu */
+  .mobile-cta {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .mobile-cta button {
+    width: 100%;
+    border-radius: 30px;
+  }
+
+  /* keep header solid */
+  nav {
+    background-color: #ffffff !important;
+  }
+}
+
+/* Smooth dropdown animation */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

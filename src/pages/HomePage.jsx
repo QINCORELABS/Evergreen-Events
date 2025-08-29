@@ -8,6 +8,7 @@ import FoodBooking from '../components/home/FoodBooking'
 import EventGallery from '../components/home/EventGallery'
 
 const HomePage = () => {
+  
   return (
     <div>
       <HeroSection/>

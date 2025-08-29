@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; 
 import "../services/ServicesSection.css";
 
 const services = [
@@ -30,11 +31,15 @@ const ServicesSection = () => {
       {/* Services Grid */}
       <div className="service-categories">
         {services.map((service, index) => (
-          <div key={index} className="service-card">
+          <Link 
+            to="/service-details" // ✅ link to details page
+            key={index} 
+            className="service-card"
+          >
             <img src={service.img} alt={service.title} />
             <div className="overlay"></div>
             <span className="service-name">{service.title}</span>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

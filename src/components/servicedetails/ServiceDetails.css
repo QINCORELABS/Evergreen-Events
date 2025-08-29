@@ -173,6 +173,7 @@
   color: #ccc;
   margin-bottom: 20px;
   text-align: justify;
+  
 }
 
 .mobile-service-items {
@@ -214,9 +215,10 @@
   bottom: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
+  display: none;
 }
 
-/* Responsive design */
+/* media Queries */
 @media (max-width: 768px) {
   .service-details-container {
     display: none;
@@ -231,7 +233,7 @@
 
 @media (max-width: 480px) {
   .mobile-service-item {
-    height: 200px; /* slightly smaller for tiny screens */
+    height: 200px; 
   }
   
   .mobile-item-name {

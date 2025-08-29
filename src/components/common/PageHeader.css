@@ -1,5 +1,5 @@
 .page-header-container {
-  height: 250px;
+  height: 230px;
   width: 100%;
   background: url("/common/headerimg.jpg") no-repeat center center;
   background-size: cover;
@@ -24,6 +24,7 @@
   font-family: "Italiana", serif;
   text-align: center;
   z-index: 1;
+  margin-top: 4%;
 }
 
 /* 🔹 Responsive adjustments */

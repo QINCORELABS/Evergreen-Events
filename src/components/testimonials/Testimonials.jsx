@@ -23,9 +23,9 @@ const Testimonials = () => {
 
   return (
     <div className="testimonials-section">
-      <div className="testimonials-header">
+      <div className="testimonials-header italiana-regular">
         <div className="testimonials-subtitle italiana-regular">TESTIMONIALS</div>
-        <h2 className="testimonials-title italiana-regular">WHAT OUR CLIENT SAY</h2>
+        <h2 className="testimonials-title italiana-regular italiana-regular">WHAT OUR CLIENT SAY</h2>
       </div>
 
       <div className="testimonials-content">

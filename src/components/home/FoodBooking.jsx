@@ -1,49 +1,148 @@
-import { useState } from "react";
-import "../home/FoodBooking.css"
+import React, { useState } from 'react';
+import "../booking/Booking.css"
+import weddingimg from "../../assets/about/about-us-img.webp"
 
-const foodItems = [
-  { title: "Fish Fry", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=500&fit=crop" },
-  { title: "Dessert", img: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=500&fit=crop" },
-  { title: "Buffet", img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=500&fit=crop" },
-];
+const Booking = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    orderNumber: '',
+    eventType: '',
+    message: ''
+  });
 
-export default function BookingSection() {
-  const [active, setActive] = useState(0);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Handle form submission here
+  };
 
   return (
-    <section className="booking-wrapper">
-      {/* Left Image Cards */}
-      <div className="image-slider">
-        {/* Main Active Card */}
-        <div className="main-card">
-          <img src={foodItems[active].img} alt={foodItems[active].title} />
-          <div className="card-overlay">
-            <h3>{foodItems[active].title}</h3>
-          </div>
-        </div>
-        
-        {/* Side Cards */}
-        <div className="side-cards">
-          {foodItems.map((item, index) => (
-            <div
-              key={index}
-              className={`side-card ${active === index ? "active" : ""}`}
-              onClick={() => setActive(index)}
-            >
-              <img src={item.img} alt={item.title} />
-            </div>
-          ))}
+    <div className="booking-section-container">
+      {/* Left Side - Wedding Image */}
+      <div className="booking-section-leftside">
+        <div className="white-bg-img"></div>
+        <div className="wedding-img">
+          <img src={weddingimg} alt="" srcset="" />
         </div>
       </div>
 
-      {/* Right Content */}
-      <div className="booking-content">
-        <p className="subtitle">BOOK TODAY</p>
-        <h2>
-          BOOK YOUR TASTING SESSION <br /> OR DISCUSS YOUR EVENT
-        </h2>
-        <button className="btn">Send free request</button>
+      {/* Right Side - Form */}
+      <div className="booking-section-rightside">
+        <div className="form-container">
+          <h2 className="form-title ">SEND YOUR EVENT DETAILS</h2>
+          
+          <div className="booking-form">
+            {/* First Row */}
+            <div className="form-row">
+              <div className="form-group">
+                <label>First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  className="form-input"
+                />
+              </div>
+              <div className="form-group">
+                <label>Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  className="form-input"
+                />
+              </div>
+            </div>
+
+            {/* Second Row */}
+            <div className="form-row">
+              <div className="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="form-input"
+                />
+              </div>
+              <div className="form-group">
+                <label>Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="form-input"
+                />
+              </div>
+            </div>
+
+            {/* Third Row */}
+            <div className="form-row">
+              <div className="form-group">
+                <label>Order Number</label>
+                <input
+                  type="text"
+                  name="orderNumber"
+                  value={formData.orderNumber}
+                  onChange={handleInputChange}
+                  className="form-input"
+                />
+              </div>
+              <div className="form-group">
+                <label>Select your event</label>
+                <select
+                  name="eventType"
+                  value={formData.eventType}
+                  onChange={handleInputChange}
+                  className="form-input form-select"
+                >
+                  <option value="">Select your event</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="engagement">Engagement</option>
+                  <option value="birthday">Birthday</option>
+                  <option value="corporate">Corporate Event</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Message Field */}
+            <div className="form-group-full">
+              <label>Your message</label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                className="form-input form-textarea"
+                rows="4"
+                placeholder=""
+              />
+            </div>
+
+            {/* Submit Button */}
+            <button type="button" onClick={handleSubmit} className="submit-button">
+              Submit
+            </button>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Booking;

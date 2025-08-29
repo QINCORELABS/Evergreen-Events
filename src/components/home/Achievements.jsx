@@ -1,12 +1,13 @@
+
 import React from "react";
 import "../home/Achievements.css"
 
 const Achievements = () => {
   const achievements = [
     { label: "Client Satisfaction", percentage: 70 },
-    { label: "Success Story", percentage: 50 },
-    { label: "Years of Experience", percentage: 70 },
-    { label: "Upcoming Events", percentage: 50 },
+    { label: "Success story", percentage: 50 },
+    { label: "Years of experience", percentage: 70 },
+    { label: "Upcoming events", percentage: 50 },
   ];
 
   return (
@@ -15,9 +16,9 @@ const Achievements = () => {
         <div key={index} className="achievement-item">
           <div 
             className="achievement-circle"
-            style={{ 
+            style={{
               "--percentage": item.percentage,
-              "--rotation": `${item.percentage * 3.6 - 90}deg`
+              "--rotation": `${item.percentage * 3.6}deg`
             }}
           >
             <div className="progress-fill"></div>

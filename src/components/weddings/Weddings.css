@@ -1,215 +1,276 @@
-/* Wedding Gallery Styles */
-.wedding-container {
-  
-  background-color: #000;
-  min-height: 100vh;
-  color: #fff;
+.wedding-section-container {
+  min-height: 120vh;
+  background-color: black;
+  padding: 2vw;
+  position: relative;
 }
 
-/* Header Styles */
-.header {
-  background: linear-gradient(135deg, #2c1810, #1a0f0a);
-  padding: 30px 20px;
-  text-align: center;
-  border-bottom: 2px solid #333;
-}
-
-.header-title {
-  color: #fff;
-  font-size: 28px;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-  margin: 0;
-  letter-spacing: 2px;
-}
-
-/* Navigation Buttons */
-.nav-buttons {
+.wedding-categories-btns {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #111;
-  padding: 15px 30px;
-  border-bottom: 1px solid #333;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.nav-button {
-  margin: 0 15px;
-  padding: 12px 25px;
-  color: #fff;
-  background-color: #4a5d23;
+.wedding-categories-btns button {
+  padding: 1.5vw;
+  background-color: #141414;
   border: none;
-  cursor: pointer;
-  font-size: 14px;
+  font-family: "Italiana", sans-serif;
   font-weight: bold;
-  letter-spacing: 1px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  color: #ffffff;
+  font-size: 1.5vw;
+  min-width: 10rem;
 }
 
-.nav-button:hover {
-  background-color: #5a7a2a;
+.wedding-categories-btns button.active {
+  background-color: #2d2b2b;
+  color: #1c6000;
 }
 
-.nav-button.active {
-  background-color: #6b8e23;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-}
-
-/* Showcase Buttons */
-.showcase-buttons {
+.content-type-btns {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #111;
-  padding: 15px 30px;
-  border-bottom: 2px solid #333;
+  gap: 2rem;
+  margin-top: 2vh;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.showcase-button {
-  margin: 0 15px;
-  padding: 10px 20px;
-  color: #fff;
-  background-color: #555;
+.content-type-btns button {
+  padding: 1.5vw;
+  background-color: #141414;
   border: none;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  font-family: "Italiana", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.5vw;
+  min-width: 10rem;
 }
 
-.showcase-button:hover {
-  background-color: #666;
+.content-type-btns button.active {
+  background-color: #2d2b2b;
+  color: #1c6000;
 }
 
-.showcase-button.active {
-  background-color: #777;
-  transform: translateY(-1px);
+.content-area {
+  margin-top: 2vh;
 }
 
-/* Gallery Styles */
-.gallery {
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  background-color: #000;
-  padding: 30px;
-  min-height: 70vh;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2vw;
+  margin-top: 2vh;
 }
 
 .gallery-item {
-  width: 100%;
-  height: 250px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: 2px solid #333;
+  background: #1a1a1a;
+  position: relative;
+  aspect-ratio: 16 / 9;
 }
 
-.gallery-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
-}
-
-.gallery-image {
+.gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
-.gallery-item:hover .gallery-image {
-  transform: scale(1.1);
+.gallery-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #1a1a1a;
 }
 
-/* Play button and video text for video showcase */
+.video-preview {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.video-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #1a1a1a;
+}
+
 .play-button {
-  font-size: 48px;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-  margin-bottom: 10px;
-  transition: transform 0.3s ease;
-}
-
-.gallery-item:hover .play-button {
-  transform: scale(1.2);
-}
-
-.video-text {
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-}
-
-/* Image Fallback */
-.image-fallback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10vw;
+  height: 10vw;
+  max-width: 50px;
+  max-height: 50px;
+  background-color: #1c6000;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 2vw;
+  min-font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  color: #666;
-  font-size: 14px;
+  cursor: pointer;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 20px;
-  }
-  
-  .nav-button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 12px;
-  }
-  
-  .header-title {
-    font-size: 24px;
-  }
-  
-  .nav-buttons, .showcase-buttons {
-    padding: 15px 20px;
-  }
+.expand-button {
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  background-color: #1c6000;
+  border: none;
+  color: white;
+  padding: 0.5vw;
+  cursor: pointer;
+  font-size: 2vw;
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  max-height: 600px;
+}
+
+.modal-content video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: 1vw;
+  right: 1vw;
+  background-color: #1c6000;
+  border: none;
+  color: white;
+  font-size: 2vw;
+  padding: 0.5vw;
+  cursor: pointer;
+  max-width: 40px;
+  max-height: 40px;
 }
 
 @media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 15px;
+  .wedding-section-container {
+    padding: 2vw;
+    min-height: 100vh;
   }
-  
-  .nav-buttons {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 15px 20px;
+
+  .wedding-categories-btns button,
+  .content-type-btns button {
+    padding: 3vw;
+    font-size: 2.5vw;
+    min-width: 8rem;
   }
-  
-  .showcase-buttons {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 15px 20px;
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5vw;
   }
-  
-  .nav-button, .showcase-button {
-    margin: 0;
-    width: auto;
-  }
-  
-  .header-title {
-    font-size: 20px;
-  }
-  
+
   .gallery-item {
-    height: 200px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .play-button {
+    width: 15vw;
+    height: 15vw;
+    max-width: 40px;
+    max-height: 40px;
+    font-size: 3vw;
+  }
+
+  .expand-button {
+    top: 1.5vw;
+    right: 1.5vw;
+    padding: 1vw;
+    font-size: 3vw;
+    max-width: 25px;
+    max-height: 25px;
+  }
+
+  .modal-content {
+    width: 90%;
+    height: 90%;
+    max-width: 600px;
+    max-height: 450px;
+  }
+
+  .close-button {
+    top: 1.5vw;
+    right: 1.5vw;
+    font-size: 3vw;
+    padding: 1vw;
+    max-width: 35px;
+    max-height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wedding-categories-btns button,
+  .content-type-btns button {
+    padding: 4vw;
+    font-size: 3vw;
+    min-width: 6rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1vw;
+  }
+
+  .play-button {
+    width: 20vw;
+    height: 20vw;
+    max-width: 30px;
+    max-height: 30px;
+    font-size: 4vw;
+  }
+
+  .expand-button {
+    top: 2vw;
+    right: 2vw;
+    padding: 1.5vw;
+    font-size: 4vw;
+    max-width: 20px;
+    max-height: 20px;
+  }
+
+  .modal-content {
+    width: 95%;
+    height: 95%;
+    max-width: 400px;
+    max-height: 300px;
+  }
+
+  .close-button {
+    top: 2vw;
+    right: 2vw;
+    font-size: 4vw;
+    padding: 1.5vw;
+    max-width: 30px;
+    max-height: 30px;
   }
 }

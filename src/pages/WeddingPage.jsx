@@ -1,12 +1,14 @@
-import React from 'react'
-import Weddings from '../components/weddings/Weddings'
+import React from "react";
+import Weddings from "../components/weddings/Weddings";
+import PageHeader from '../components/common/PageHeader'
 
 const WeddingPage = () => {
   return (
     <div>
-      <Weddings/>
+        <PageHeader title="WEDDING"/>
+      <Weddings />
     </div>
-  )
-}
+  );
+};
 
-export default WeddingPage
+export default WeddingPage;

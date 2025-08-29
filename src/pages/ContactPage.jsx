@@ -3,6 +3,7 @@ import Contact from '../components/contact/Contact'
 import PageHeader from '../components/common/PageHeader'
 
 const ContactPage = () => {
+  
   return (
     <div>
         <PageHeader title = "CONTACT"/>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../home/HeroSection.css"
 
 const HeroSection = () => {
@@ -6,16 +6,16 @@ const HeroSection = () => {
 
   const slides = [
     { 
-      image: "./carousels/firstcarousel.jpeg",  
+      image: "./carousels/carouselone.jpg",  
       description: 'KERALA | ROYAL EVENTS & WEDDING PLANNER' 
     },
     { 
-      image: "/carousels/secondcarousel.jpeg", 
+      image: "/carousels/carouseltwo.jpg", 
       title: 'Wedding Event', 
       description: 'LUXURY WEDDING PLANNING' 
     },
     { 
-      image: '/carousels/thirdcarousel.png', 
+      image: '/carousels/carouselthree.jpg', 
       title: 'Wedding Event', 
       description: 'ELITE EVENT SERVICES' 
     },
@@ -33,6 +33,15 @@ const HeroSection = () => {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
+
+  // Auto-scroll effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000); // change slide every 5 seconds
+
+    return () => clearInterval(interval); // cleanup on unmount
+  }, [currentSlide]); 
 
   const { image, title, description } = slides[currentSlide];
 
