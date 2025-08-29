@@ -57,13 +57,19 @@ const Weddings = () => {
           {data.videos.map(video => (
             <div key={video.id} className="gallery-item">
               {playingVideo === video.id ? (
-                <video controls>
+                <video 
+                  controls 
+                  autoPlay 
+                  muted 
+                  loop
+                  key={`playing-${video.id}`}
+                >
                   <source src={video.src} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               ) : (
                 <div className="video-preview" onClick={() => handlePlayVideo(video)}>
-                  <video poster={video.src}>
+                  <video muted preload="metadata">
                     <source src={video.src} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
@@ -82,6 +88,7 @@ const Weddings = () => {
 
   return (
     <div className='wedding-section-container'>
+      {/* Row 1: Category buttons */}
       <div className="wedding-categories-btns">
         <button 
           className={selectedCategory === 'hindu' ? 'active' : ''}
@@ -102,6 +109,8 @@ const Weddings = () => {
           CHRISTIAN WEDDING
         </button>
       </div>
+
+      {/* Row 2: Showcase buttons */}
       <div className="content-type-btns">
         <button 
           className={contentType === 'images' ? 'active' : ''}
@@ -116,13 +125,23 @@ const Weddings = () => {
           Video Showcase
         </button>
       </div>
+
+      {/* Row 3: Gallery */}
       <div className="content-area">
         {renderGallery()}
       </div>
+
+      {/* Expanded Video Modal */}
       {expandedVideo && (
         <div className="modal" onClick={handleCloseExpanded}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <video controls autoPlay>
+            <video 
+              controls 
+              autoPlay 
+              muted 
+              loop
+              key={`expanded-${expandedVideo.id}`}
+            >
               <source src={expandedVideo.src} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
