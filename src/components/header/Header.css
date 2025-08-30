@@ -72,17 +72,30 @@ nav {
 
 /* ---------- MOBILE STYLES ---------- */
 .mobile-cta {
-  display: none; /* hidden on desktop */
+  display: none; 
 }
 
 @media (max-width: 768px) {
-  .nav-menus ul {
+  nav {
+    background: none !important; 
+    box-shadow: none; 
+    padding: 0 15px;
+    top: 10px; 
+    width: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Hide menus and desktop CTA initially */
+  .nav-menus ul,
+  .nav-contact {
     display: none;
   }
 
-  /* Hide desktop button */
-  .nav-contact {
-    display: none;
+  /* Adjust logo size */
+  .nav-left-section img {
+    height: 50px;
+    width: auto;
   }
 
   /* Show hamburger */
@@ -90,30 +103,35 @@ nav {
     display: block;
     position: absolute;
     right: 20px;
-    top: 15px;
+    top: 10px;
+    font-size: 28px;
+    color: #000;
+    background: none;
+    border: none;
   }
 
-  /* Mobile dropdown menu */
+  /* Dropdown menu when open */
   .nav-menus.open ul {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
-    padding: 20px;
-    background-color: #000000; /* black background */
+    padding: 10px; /* 🔥 Reduced padding */
+    background-color: #000000;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     border-radius: 0 0 8px 8px;
     z-index: 999;
     animation: slideDown 0.3s ease;
+    gap: 10px; /* 🔥 Reduced space between links */
   }
 
   .nav-menus.open ul li {
-    margin: 12px 0;
-    font-size: 18px;
+    margin: 6px 0; /* 🔥 Less vertical space */
+    font-size: 16px; /* Slightly smaller text */
     text-align: center;
-    color: #ffffff; /* white text */
+    color: #ffffff;
   }
 
   .nav-menus.open ul li a {
@@ -121,26 +139,28 @@ nav {
     text-decoration: none;
   }
 
-  /* CTA inside mobile menu */
+  /* CTA in mobile menu */
   .mobile-cta {
     display: block;
-    margin-top: 15px;
+    margin-top: 10px; /* 🔥 Less space above button */
     text-align: center;
   }
 
   .mobile-cta button {
     width: 100%;
     border-radius: 30px;
-  }
-
-  /* keep header solid */
-  nav {
-    background-color: #ffffff !important;
+    padding: 8px 0; /* Slimmer button */
   }
 }
 
 /* Smooth dropdown animation */
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
