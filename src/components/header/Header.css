@@ -17,9 +17,11 @@ nav {
   transition: background 0.3s ease;
 }
 
+/* 🔥 Reduced Logo Size on Desktop */
 .nav-left-section img {
-  height: 54px;
-  width: 164px;
+  height: 50px;
+  width: 140px; /* Reduced from 164px */
+  object-fit: contain;
 }
 
 .nav-menus ul {
@@ -60,7 +62,7 @@ nav {
 
 .nav-contact button:hover,
 .mobile-cta button:hover {
-  background-color: #1c6000;
+  background-color: #007a33;
 }
 
 .hamburger {
@@ -118,18 +120,18 @@ nav {
     top: 60px;
     left: 0;
     width: 100%;
-    padding: 10px; /* 🔥 Reduced padding */
+    padding: 10px;
     background-color: #000000;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     border-radius: 0 0 8px 8px;
     z-index: 999;
     animation: slideDown 0.3s ease;
-    gap: 10px; /* 🔥 Reduced space between links */
+    gap: 10px;
   }
 
   .nav-menus.open ul li {
-    margin: 6px 0; /* 🔥 Less vertical space */
-    font-size: 16px; /* Slightly smaller text */
+    margin: 6px 0;
+    font-size: 16px;
     text-align: center;
     color: #ffffff;
   }
@@ -142,14 +144,14 @@ nav {
   /* CTA in mobile menu */
   .mobile-cta {
     display: block;
-    margin-top: 10px; /* 🔥 Less space above button */
+    margin-top: 10px;
     text-align: center;
   }
 
   .mobile-cta button {
     width: 100%;
     border-radius: 30px;
-    padding: 8px 0; /* Slimmer button */
+    padding: 8px 0;
   }
 }
 

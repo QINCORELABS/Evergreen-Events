@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../home/AboutHome.css";
 import { FiArrowRight } from "react-icons/fi"; // Right Arrow Icon
 import aboutusweddingimg from "../../assets/about/about-us-img.webp";
-import aboutussecond from "../../assets/about/about-us-second.webp";
+import aboutussecond from "/about/about-new.jpg"
 
 const AboutHome = () => {
   return (

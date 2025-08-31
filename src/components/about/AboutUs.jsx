@@ -1,7 +1,7 @@
 import React from "react";
 import "../about/AboutUs.css";
 import aboutusweddingimg from "../../assets/about/about-us-img.webp";
-import aboutussecond from "../../assets/about/about-us-second.webp";
+import aboutussecond from "/about/about-new.jpg"
 import evergreenlogo from "../../../public/logos/evergreen-logo.webp";
 import registrationcertificate from "../../assets/about/registration-certificate.webp";
 

@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../header/Header.css";
 import evergreenlogo from "../../../public/logos/evergreen-green-logo.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    setIsOpen(false);
+    navigate("/contact");
+  };
 
   return (
     <nav className={isOpen ? "active-nav" : ""}>
+      {/* Logo */}
       <div className="nav-left-section">
         <img src={evergreenlogo} alt="Evergreen Logo" />
       </div>
@@ -29,13 +36,15 @@ const Header = () => {
           <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link></li>
 
           {/* Mobile CTA */}
-          <li className="mobile-cta"><button>Book now</button></li>
+          <li className="mobile-cta">
+            <button onClick={handleContactClick}>Book now</button>
+          </li>
         </ul>
       </div>
 
       {/* Desktop CTA */}
       <div className="nav-contact">
-        <button>Book now</button>
+        <button onClick={handleContactClick}>Book now</button>
       </div>
     </nav>
   );

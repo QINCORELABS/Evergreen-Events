@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../home/EventGallery.css";
+
 const EventGallery = () => {
   const [activeCategory, setActiveCategory] = useState("HINDU WEDDING");
 

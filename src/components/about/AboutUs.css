@@ -29,7 +29,7 @@
   font-size: 40px;
   line-height: 1.3em;
   color: #fff;
-   font-family: "Italiana", sans-serif;
+  font-family: "Italiana", sans-serif;
 }
 
 .about-us-first-contents p {
@@ -39,7 +39,7 @@
   font-size: 16px;
 }
 
-/* Image Container */
+/* Image Container - FIXED HEIGHT FOR VISIBILITY */
 .about-us-first-rightside {
   flex: 1;
   display: flex;
@@ -50,13 +50,25 @@
 .image-container {
   position: relative;
   display: inline-block;
+  height: 450px; /* 🔥 Increased height for clear visibility */
+  overflow: hidden;
 }
 
 .image-container img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
   position: relative;
   z-index: 2;
+}
+
+/* Second image inherits same height */
+.secondaboutimg {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
 }
 
 .dotted-overlay {
@@ -112,6 +124,10 @@
   .about-us-first-contents h2 {
     font-size: 32px;
   }
+
+  .image-container {
+    height: 350px; /* Shrink slightly on tablets */
+  }
 }
 
 @media (max-width: 768px) {
@@ -140,7 +156,8 @@
 
   .image-container {
     width: 100%;
-    max-width: 220px;
+    max-width: 300px;
+    height: 250px; /* Adjust for mobile */
   }
 
   .registration-certificate img {
@@ -163,5 +180,9 @@
 
   .registration-certificate img {
     max-width: 160px;
+  }
+
+  .image-container {
+    height: 200px;
   }
 }

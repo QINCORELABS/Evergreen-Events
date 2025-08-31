@@ -5,41 +5,32 @@ const Achievements = () => {
   const achievements = [
     { label: "Client Satisfaction", percentage: 100 },
     { label: "Success Story", percentage: 100 },
-    { label: "Years of Experience", number: 15 },
-    { label: "Upcoming Events", number: 25 },
+    { label: "Years of Experience", percentage: 100, display: "15+" },
+    { label: "Upcoming Events", percentage: 100, display: "25+" },
   ];
 
   return (
     <div className="achievements-container">
-      {achievements.map((item, index) => (
-        <div key={index} className="achievement-item">
-          {item.percentage !== undefined ? (
-            // 🔹 Animated Progress Circle
+      {achievements.map((item, index) => {
+        const rotation = item.percentage * 3.6; // Always 360 for full circle
+        return (
+          <div key={index} className="achievement-item">
             <div
               className="achievement-circle"
               style={{
-                "--percentage": item.percentage,
-                "--rotation": `${item.percentage * 3.6}deg`,
+                "--percentage": 100, // Force full circle
+                "--rotation": "360deg",
               }}
             >
               <div className="progress-fill"></div>
-              <div
-                className="clock-hand"
-                style={{
-                  transform: `translateX(-50%) translateY(-100%) rotate(${item.percentage * 3.6}deg)`,
-                }}
-              ></div>
-              <span className="percentage-text">{item.percentage}%</span>
+              <span className="percentage-text">
+                {item.display ? item.display : `${item.percentage}%`}
+              </span>
             </div>
-          ) : (
-            // 🔹 Static Circle for Numbers
-            <div className="achievement-circle number-circle">
-              <span className="number-text">{item.number}</span>
-            </div>
-          )}
-          <p className="achievement-label">{item.label}</p>
-        </div>
-      ))}
+            <p className="achievement-label">{item.label}</p>
+          </div>
+        );
+      })}
     </div>
   );
 };
