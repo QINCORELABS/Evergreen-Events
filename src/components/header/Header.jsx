@@ -22,7 +22,7 @@ const Header = () => {
         <ul>
           <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
           <li><Link to="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
-          <li><Link to="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
+          <li><Link to="/service-details" onClick={() => setIsOpen(false)}>Services</Link></li>
           <li><Link to="/booking" onClick={() => setIsOpen(false)}>Booking</Link></li>
           <li><Link to="/testimonials" onClick={() => setIsOpen(false)}>Testimonials</Link></li>
           <li><Link to="/weddings" onClick={() => setIsOpen(false)}>Gallery</Link></li>

@@ -18,10 +18,10 @@ const Footer = () => {
         <p className="footer-title">Connect with us</p>
         <p className="footer-subtitle">Keep in touch with your events</p>
         <div className="social-icons">
-          <a href="#"><FaFacebookF /></a>
+          <a href="https://www.facebook.com/share/1AGfuWs2tv/"><FaFacebookF /></a>
           <a href="#"><FaTwitter /></a>
           <a href="#"><FaYoutube /></a>
-          <a href="#"><FaInstagram /></a>
+          <a href="https://www.instagram.com/evergreen_events_kollam?igsh=MWM3N25mOHZzYjEwdQ=="><FaInstagram /></a>
         </div>
       </div>
 

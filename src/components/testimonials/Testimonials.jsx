@@ -25,7 +25,7 @@ const Testimonials = () => {
     <div className="testimonials-section">
       <div className="testimonials-header italiana-regular">
         <div className="testimonials-subtitle italiana-regular">TESTIMONIALS</div>
-        <h2 className="testimonials-title italiana-regular italiana-regular">WHAT OUR CLIENT SAY</h2>
+        <h2 className="testimonials-title italiana-regular">WHAT OUR CLIENT SAY</h2>
       </div>
 
       <div className="testimonials-content">
@@ -44,23 +44,24 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
+      </div>
 
-        <div className="testimonials-navigation">
-          <button 
-            className={`nav-button ${currentIndex === 0 ? 'disabled' : ''}`}
-            onClick={goToPrevious}
-            disabled={currentIndex === 0}
-          >
-            <span className="nav-arrow">←</span>
-          </button>
-          <button 
-            className={`nav-button ${currentIndex >= testimonialsData.length - 2 ? 'disabled' : ''}`}
-            onClick={goToNext}
-            disabled={currentIndex >= testimonialsData.length - 2}
-          >
-            <span className="nav-arrow">→</span>
-          </button>
-        </div>
+      {/* Buttons moved here */}
+      <div className="testimonials-navigation">
+        <button
+          className={`nav-button ${currentIndex === 0 ? 'disabled' : ''}`}
+          onClick={goToPrevious}
+          disabled={currentIndex === 0}
+        >
+          <span className="nav-arrow">←</span>
+        </button>
+        <button
+          className={`nav-button ${currentIndex >= testimonialsData.length - 2 ? 'disabled' : ''}`}
+          onClick={goToNext}
+          disabled={currentIndex >= testimonialsData.length - 2}
+        >
+          <span className="nav-arrow">→</span>
+        </button>
       </div>
     </div>
   );

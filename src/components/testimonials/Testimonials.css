@@ -24,15 +24,9 @@
   position: relative;
 }
 
+/* 🔥 Removed the underline */
 .testimonials-subtitle::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 1px;
-  background-color: #fff;
+  content: none;
 }
 
 .testimonials-title {
@@ -86,7 +80,6 @@
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 30px;
-
   max-width: 350px;
 }
 
@@ -101,7 +94,7 @@
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 40px; /* 🔥 Pushed buttons down */
 }
 
 .nav-button {
@@ -135,7 +128,7 @@
   font-weight: bold;
 }
 
-/* mediaQueries */
+/* 📱 Responsive Styles */
 @media (max-width: 768px) {
   .testimonials-section {
     padding: 60px 20px;

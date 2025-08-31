@@ -1,4 +1,3 @@
-
 .achievements-container {
   display: flex;
   justify-content: center;
@@ -17,6 +16,7 @@
   gap: 25px;
 }
 
+/* Circle Base */
 .achievement-circle {
   position: relative;
   width: 180px;
@@ -28,6 +28,7 @@
   background: #2a2a2a;
 }
 
+/* 🔹 Progress Circle */
 .progress-fill {
   position: absolute;
   width: 100%;
@@ -44,6 +45,7 @@
   z-index: 1;
 }
 
+/* 🔹 Clock Hand */
 .clock-hand {
   position: absolute;
   top: 50%;
@@ -52,12 +54,12 @@
   height: 80px;
   background: #fff;
   transform-origin: bottom center;
-  transform: translateX(-50%) translateY(-100%) rotate(0deg);
   border-radius: 3px;
   z-index: 3;
   animation: rotateHand 2s ease-out forwards;
 }
 
+/* 🔹 Text in Progress Circle */
 .percentage-text {
   position: absolute;
   color: #fff;
@@ -68,6 +70,21 @@
   font-family: Arial, sans-serif;
 }
 
+/* 🔹 Static Number Circles */
+.number-circle {
+  background: #2e7d32;
+}
+
+.number-text {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  z-index: 4;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Label */
 .achievement-label {
   color: #888;
   font-size: 16px;
@@ -75,7 +92,7 @@
   margin: 0;
   max-width: 140px;
   line-height: 1.3;
-   font-family: "kohinoor";
+  font-family: "kohinoor";
 }
 
 /* Animations */
@@ -109,23 +126,24 @@
   }
 }
 
-/* Responsive design */
+/* Responsive */
 @media (max-width: 768px) {
   .achievements-container {
     gap: 50px;
     padding: 40px 10px;
   }
-  
+
   .achievement-circle {
     width: 150px;
     height: 150px;
   }
-  
+
   .clock-hand {
     height: 65px;
   }
-  
-  .percentage-text {
-    font-size: 24px;
+
+  .percentage-text,
+  .number-text {
+    font-size: 28px;
   }
 }
