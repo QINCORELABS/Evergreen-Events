@@ -1,7 +1,6 @@
-// src/utils/whatsapp.js
+
 export function sendWhatsAppMessage(formData) {
-    const dummyNumber = "911234567890"; // Dummy number
-  
+    const dummyNumber = "+919947376667"; 
     const message = `Hello! I want to share my event details:
   First Name: ${formData.firstName}
   Last Name: ${formData.lastName}
