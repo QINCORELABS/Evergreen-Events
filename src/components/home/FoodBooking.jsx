@@ -16,7 +16,7 @@ const FoodBooking = () => {
   };
 
   const handleButtonClick = () => {
-    navigate("/contact"); // ✅ navigate to /contact
+    navigate("/booking"); // ✅ navigate to /contact
   };
 
   return (

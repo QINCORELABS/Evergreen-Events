@@ -23,11 +23,6 @@
   cursor: pointer;
 }
 
-.wedding-categories-btns button.active {
-  background-color: #2d2b2b;
-  color: #1c6000;
-}
-
 /* Row 2: Showcase buttons */
 .content-type-btns {
   display: flex;
@@ -46,9 +41,11 @@
   cursor: pointer;
 }
 
+/* Active button style: light white background */
+.wedding-categories-btns button.active,
 .content-type-btns button.active {
-  background-color: #2d2b2b;
-  color: #1c6000;
+  background-color: #f0f0f0; /* light white */
+  color: #000000; /* black text */
 }
 
 /* Row 3: Gallery grid */
