@@ -17,7 +17,7 @@
   gap: 25px;
 }
 
-/* Circle */
+/* Circle Container */
 .achievement-circle {
   position: relative;
   width: 180px;
@@ -27,28 +27,45 @@
   align-items: center;
   justify-content: center;
   background: #1a1a1a;
-  box-shadow: 0 0 20px rgba(46, 125, 50, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.05);
-  overflow: hidden;
+  box-shadow: 0 0 20px rgba(46, 125, 50, 0.3),
+              inset 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
-/* Full Green Progress */
+/* Background Circle */
+.achievement-circle::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  border: 8px solid #333;
+  z-index: 1;
+}
+
+/* Progress Fill - This creates the filling effect */
 .progress-fill {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
   border-radius: 50%;
   background: conic-gradient(
     from -90deg,
     #2e7d32 0deg,
-    #2e7d32 360deg
+    #2e7d32 0deg,
+    transparent 0deg,
+    transparent 360deg
   );
-  animation: fillProgressFull 1.8s ease-in-out forwards;
-  z-index: 1;
+  animation: fillProgress 3s ease-out forwards;
+  z-index: 2;
 }
 
-/* Text */
+/* Percentage Text */
 .percentage-text {
-  position: absolute;
+  position: relative;
   color: #fff;
   font-size: 34px;
   font-weight: 800;
@@ -56,6 +73,7 @@
   text-align: center;
   font-family: Arial, sans-serif;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  animation: countUp 3s ease-out forwards;
 }
 
 /* Label */
@@ -66,24 +84,41 @@
   margin: 0;
   max-width: 160px;
   line-height: 1.4;
-  font-family: "Kohinoor";
+  font-family: Arial, sans-serif;
 }
 
-/* Full Circle Animation */
-@keyframes fillProgressFull {
-  from {
+/* Fill Animation - Fills to target percentage once */
+@keyframes fillProgress {
+  0% {
     background: conic-gradient(
       from -90deg,
       #2e7d32 0deg,
-      #2e7d32 0deg
+      #2e7d32 0deg,
+      transparent 0deg,
+      transparent 360deg
     );
   }
-  to {
+  100% {
     background: conic-gradient(
       from -90deg,
       #2e7d32 0deg,
-      #2e7d32 360deg
+      #2e7d32 var(--percentage-deg),
+      transparent var(--percentage-deg),
+      transparent 360deg
     );
+  }
+}
+
+/* Counter Animation - Animates the percentage text */
+@keyframes countUp {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

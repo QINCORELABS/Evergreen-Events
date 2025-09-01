@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import "../footer/Footer.css";
 import evergreenlogo from "../../../public/logos/evergreen-logo.webp";
 
@@ -29,10 +30,13 @@ const Footer = () => {
       <div className="footer-section">
         <h3>Quick links</h3>
         <ul>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Booking</a></li>
-          <li><a href="#">Contact us</a></li>
+          <li><Link to="/about">About us</Link></li>
+          <li><Link to="/service-details">Services</Link></li>
+          <li><Link to="/booking">Booking</Link></li>
+          <li><Link to="/contact">Contact us</Link></li>
+          <li><Link to="/weddings">Gallery</Link></li>
+          <li><Link to="/testimonials">Testimonials</Link></li>
+          <li><Link to="/">Home</Link></li>
         </ul>
       </div>
 
@@ -52,7 +56,7 @@ const Footer = () => {
         <ul>
           <li><FaMapMarkerAlt /> Evergreen Events, 6th Floor, Bishop Jerome Nagar, Chinnakkada, Kollam</li>
           <li><FaPhone /> +91 99 47 37 66 67</li>
-          <li><FaEnvelope /> evergreenevents5667@gmail.com</li>
+          <li><FaEnvelope /> evergreenevents6667@gmail.com</li>
         </ul>
       </div>
 

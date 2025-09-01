@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom"; 
 import "../services/ServicesSection.css";
 
@@ -18,6 +18,19 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  useEffect(() => {
+    const cards = document.querySelectorAll(".service-card");
+
+    cards.forEach(card => {
+      card.addEventListener("touchstart", () => {
+        card.classList.add("touch");
+      });
+      card.addEventListener("touchend", () => {
+        setTimeout(() => card.classList.remove("touch"), 2000); // keep effect 2s
+      });
+    });
+  }, []);
+
   return (
     <div className="service-section-container">
       {/* Title */}
@@ -32,7 +45,7 @@ const ServicesSection = () => {
       <div className="service-categories">
         {services.map((service, index) => (
           <Link 
-            to="/service-details" // ✅ link to details page
+            to="/service-details"
             key={index} 
             className="service-card"
           >

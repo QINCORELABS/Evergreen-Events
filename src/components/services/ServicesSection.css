@@ -1,11 +1,13 @@
+/* Container */
 .service-section-container {
   width: 100%;
   background-color: #000;
   padding: 80px 60px;
 }
 
+/* Title */
 .service-section-title h2 {
-  color: var(--heading-color, #fff);
+  color: #fff;
   font-weight: 300;
   font-size: 34px;
   line-height: 1.6em;
@@ -13,15 +15,17 @@
   margin-bottom: 50px;
   text-align: left;
   max-width: 900px;
-   font-family: "Italiana", sans-serif;
+  font-family: "Italiana", sans-serif;
 }
 
+/* Services Grid */
 .service-categories {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
 }
 
+/* Service Card */
 .service-card {
   position: relative;
   border-radius: 14px;
@@ -32,17 +36,20 @@
   align-items: flex-end;
   justify-content: flex-start;
   transition: transform 0.3s ease;
+  outline: none; /* allow focus without border */
 }
 
+/* Card Image */
 .service-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: blur(4px) brightness(0.7);
+  filter: blur(4px) brightness(0.7); /* initial blur + dark */
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
+/* Overlay */
 .service-card .overlay {
   position: absolute;
   inset: 0;
@@ -50,6 +57,7 @@
   transition: background 0.3s ease;
 }
 
+/* Service Name */
 .service-name {
   position: absolute;
   bottom: 18px;
@@ -62,19 +70,21 @@
   font-family: "kohinoor";
 }
 
-/* Hover Effects (only desktops) */
-@media (hover: hover) and (pointer: fine) {
-  .service-card:hover img {
-    transform: scale(1.1);
-    filter: blur(0) brightness(1);
-  }
-
-  .service-card:hover .overlay {
-    background: rgba(0, 0, 0, 0.65);
-  }
+/* Hover / Tap / Focus Effect */
+.service-card:hover img,
+.service-card:focus img,
+.service-card:active img {
+  transform: scale(1.1);
+  filter: blur(0) brightness(1); /* clear image */
 }
 
-/* mediaQueries */
+.service-card:hover .overlay,
+.service-card:focus .overlay,
+.service-card:active .overlay {
+  background: rgba(0, 0, 0, 0.65); /* darker overlay */
+}
+
+/* Media Queries */
 @media (max-width: 1024px) {
   .service-section-container {
     padding: 60px 40px;
@@ -98,10 +108,5 @@
 
   .service-card {
     height: 180px;
-  }
-
-  /* 🔹 Disable blur on mobile */
-  .service-card img {
-    filter: none !important;
   }
 }

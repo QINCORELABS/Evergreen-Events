@@ -6,6 +6,7 @@ import ServicesSection from '../components/services/ServicesSection'
 import Achievements from '../components/home/Achievements'
 import FoodBooking from '../components/home/FoodBooking'
 import EventGallery from '../components/home/EventGallery'
+import EventMemory from '../components/home/EventMemory'
 
 const HomePage = () => {
   
@@ -15,9 +16,9 @@ const HomePage = () => {
       <AboutHome/>
       <Achievements/>
       <ServicesSection/>
+      <EventMemory/>
       <FoodBooking/>
       <EventGallery/>
-      
       <Testimonials/>
     </div>
   )

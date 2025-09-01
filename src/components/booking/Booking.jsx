@@ -1,30 +1,25 @@
-import React, { useState } from 'react';
-import "../booking/Booking.css"
-import weddingimg from "../../assets/about/about-us-img.webp"
+import React, { useState } from "react";
+import "../booking/Booking.css";
+import weddingimg from "../../assets/about/about-us-img.webp";
+import { sendWhatsAppMessage } from "../../utils/whatsApp"
 
 const Booking = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    orderNumber: '',
-    eventType: '',
-    message: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    orderNumber: "",
+    eventType: "",
+    message: ""
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value
     }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
   };
 
   return (
@@ -33,15 +28,15 @@ const Booking = () => {
       <div className="booking-section-leftside">
         <div className="white-bg-img"></div>
         <div className="wedding-img">
-          <img src={weddingimg} alt="" srcset="" />
+          <img src={weddingimg} alt="Wedding" />
         </div>
       </div>
 
       {/* Right Side - Form */}
       <div className="booking-section-rightside">
         <div className="form-container">
-          <h2 className="form-title ">SEND YOUR EVENT DETAILS</h2>
-          
+          <h2 className="form-title">SEND YOUR EVENT DETAILS</h2>
+
           <div className="booking-form">
             {/* First Row */}
             <div className="form-row">
@@ -130,12 +125,15 @@ const Booking = () => {
                 onChange={handleInputChange}
                 className="form-input form-textarea"
                 rows="4"
-                placeholder=""
               />
             </div>
 
             {/* Submit Button */}
-            <button type="button" onClick={handleSubmit} className="submit-button">
+            <button
+              type="button"
+              onClick={() => sendWhatsAppMessage(formData)}
+              className="submit-button"
+            >
               Submit
             </button>
           </div>

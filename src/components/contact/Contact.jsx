@@ -24,7 +24,7 @@ const Contact = () => {
 
         <div className="info-box">
           <button className="info-btn">EMAIL</button>
-          <p>evergreenevents666@gmail.com</p>
+          <p>evergreenevents6667@gmail.com</p>
         </div>
       </div>
 

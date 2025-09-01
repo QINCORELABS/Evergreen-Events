@@ -16,7 +16,9 @@ const Header = () => {
     <nav className={isOpen ? "active-nav" : ""}>
       {/* Logo */}
       <div className="nav-left-section">
-        <img src={evergreenlogo} alt="Evergreen Logo" />
+        <Link to="/" onClick={() => setIsOpen(false)}>
+          <img src={evergreenlogo} alt="Evergreen Logo" />
+        </Link>
       </div>
 
       {/* Hamburger Menu */}

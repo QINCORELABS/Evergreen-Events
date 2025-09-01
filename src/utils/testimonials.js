@@ -1,15 +1,17 @@
+import bonyimg from "../assets/about/about-us-img.webp"
+
 export const testimonialsData = [
   {
     id: 1,
     name: "Bony",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-    testimonial: "The program was nothing less than a spectacular film award night... every detail had been meticulously planned and flawlessly executed... We will cherish these memories for a lifetime."
+    image: bonyimg,
+    testimonial: "The program was nothing less than a spectacular film award night… every detail had been meticulously planned and flawlessly executed… We will cherish these memories for a lifetime."
   },
   {
     id: 2,
     name: "Sampurna",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-    testimonial: "The program was nothing less than a spectacular film award night... every detail had been meticulously planned and flawlessly executed... We will cherish these memories for a lifetime."
+    testimonial: "The program was nothing less than a spectacular film award night… every detail had been meticulously planned and flawlessly executed… We will cherish these memories for a lifetime."
   },
   {
     id: 3,

@@ -1,28 +1,33 @@
 import React from "react";
-import "../home/Achievements.css";
+import "../home/Achievements.css"
 
 const Achievements = () => {
   const achievements = [
-    { label: "Client Satisfaction", percentage: 100 },
-    { label: "Success Story", percentage: 100 },
-    { label: "Years of Experience", percentage: 100, display: "15+" },
-    { label: "Upcoming Events", percentage: 100, display: "25+" },
+    { label: "Client Satisfaction", percentage: 70 },
+    { label: "Success Story", percentage: 50 },
+    { label: "Years of Experience", percentage: 70, display: "15+" },
+    { label: "Upcoming Events", percentage: 50, display: "25+" },
   ];
 
   return (
     <div className="achievements-container">
       {achievements.map((item, index) => {
-        const rotation = item.percentage * 3.6; // Always 360 for full circle
+        const percentageDeg = (item.percentage / 100) * 360;
+        
         return (
           <div key={index} className="achievement-item">
-            <div
+            <div 
               className="achievement-circle"
               style={{
-                "--percentage": 100, // Force full circle
-                "--rotation": "360deg",
+                '--percentage-deg': `${percentageDeg}deg`
               }}
             >
-              <div className="progress-fill"></div>
+              <div 
+                className="progress-fill"
+                style={{
+                  '--percentage-deg': `${percentageDeg}deg`
+                }}
+              ></div>
               <span className="percentage-text">
                 {item.display ? item.display : `${item.percentage}%`}
               </span>
