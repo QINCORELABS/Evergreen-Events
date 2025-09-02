@@ -3,8 +3,8 @@ import "../home/Achievements.css"
 
 const Achievements = () => {
   const achievements = [
-    { label: "Client Satisfaction", percentage: 70 },
-    { label: "Success Story", percentage: 50 },
+    { label: "Client Satisfaction", percentage: 100 },
+    { label: "Success Story", percentage: 100 },
     { label: "Years of Experience", percentage: 70, display: "15+" },
     { label: "Upcoming Events", percentage: 50, display: "25+" },
   ];
